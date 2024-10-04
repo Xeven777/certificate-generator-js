@@ -1,0 +1,1 @@
+export { generateCertificates } from './src/certificateGenerator.js';

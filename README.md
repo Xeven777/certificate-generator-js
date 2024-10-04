@@ -1,6 +1,6 @@
 # Certificate Generator
 
-This project provides a TypeScript-based tool for generating customizable certificates in PDF format.
+This project provides a node-js based tool for generating customizable certificates in PDF format.
 
 ## Features
 
@@ -32,19 +32,22 @@ This project provides a TypeScript-based tool for generating customizable certif
 
 To generate certificates, use the following command:
 
-```typescript
-import { generateCertificates } from "./index";
+```javascript
+// Example usage:
 
-const names = ["John Doe", "Jane Smith"];
-const outputDir = "./certificates";
-const fontColor = rgb(0.5, 0, 0.5); // Custom color
+const fontUrl = path.resolve(__dirname, "./assets/DancingScript-Variable.ttf");
+const pdfTemplateUrl = path.resolve(__dirname, "./assets/certificate1.pdf");
+const outputDir = path.resolve(__dirname, "output");
+
+const names = ["John Doe", "Jane Smith", "Max Mustermann"];
+const customColor = rgb(0.5, 0, 0.5);
 
 generateCertificates(
-  "font-url.ttf",
-  "template.pdf",
+  fontUrl,
+  pdfTemplateUrl,
   names,
   outputDir,
-  fontColor,
+  customColor,
   100,
   -50
 )
