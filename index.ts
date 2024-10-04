@@ -84,22 +84,23 @@ const generateCertificates = async (
   console.timeEnd("Certificates");
 };
 
-const fontUrl = path.resolve(__dirname, "./assets/DancingScript-Variable.ttf");
-const pdfTemplateUrl = path.resolve(__dirname, "./assets/cert2.pdf");
-const outputDir = path.resolve(__dirname, "moksha");
-
 // Example usage:
-const names = ["John Doe", "Jane Smith", "Max Mustermann"];
-const customColor = rgb(0.5, 0, 0.5);
 
-generateCertificates(
-  fontUrl,
-  pdfTemplateUrl,
-  names,
-  outputDir,
-  customColor,
-  100,
-  -50
-)
-  .then(() => console.log("All PDFs generated successfully"))
-  .catch((error) => console.error("Error generating PDFs:", error));
+// const fontUrl = path.resolve(__dirname, "./assets/DancingScript-Variable.ttf");
+// const pdfTemplateUrl = path.resolve(__dirname, "./assets/certificate1.pdf");
+// const outputDir = path.resolve(__dirname, "output");
+
+// const names = ["John Doe", "Jane Smith", "Max Mustermann"];
+// const customColor = rgb(0.5, 0, 0.5);
+
+// generateCertificates(
+//   fontUrl,
+//   pdfTemplateUrl,
+//   names,
+//   outputDir,
+//   customColor,
+//   100,
+//   -50
+// )
+//   .then(() => console.log("All PDFs generated successfully"))
+//   .catch((error) => console.error("Error generating PDFs:", error));
