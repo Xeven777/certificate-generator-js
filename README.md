@@ -5,15 +5,15 @@ A Node.js package to generate personalized certificates in PDF format.
 ## Installation
 
 ```bash
-npm install certificate-generator
+npm install certificate-generator-js
 ```
 
 ## Features
 
-- Dynamically generates personalized certificates for events, workshops, or courses
-- Supports batch processing for multiple recipients
-- Allows customization of font color and positioning
-- Uses PDF-Lib library for robust PDF generation capabilities
+- Dynamically generates personalized certificates for events, workshops, or courses✨
+- Supports batch processing for multiple recipients 🫂
+- Allows customization of font color and positioning ✌🏻
+- Uses PDF-Lib library for robust PDF generation capabilities 🧑🏻‍💻
 
 ## Usage
 
@@ -22,11 +22,15 @@ To generate certificates, use the following command:
 ```javascript
 // Example usage:
 
-const fontUrl = path.resolve(__dirname, "./assets/DancingScript-Variable.ttf");
-const pdfTemplateUrl = path.resolve(__dirname, "./assets/certificate1.pdf");
+import { generateCertificates } from "certificate-generator-js";
+import path from "path";
+import { rgb } from "pdf-lib";
+
+const fontUrl = path.resolve(__dirname, "./DancingScript-Variable.ttf");
+const pdfTemplateUrl = path.resolve(__dirname, "./moksha.pdf");
 const outputDir = path.resolve(__dirname, "output");
 
-const names = ["John Doe", "Jane Smith", "Max Mustermann"];
+const names = ["Xeven", "Anish"];
 const customColor = rgb(0.5, 0, 0.5);
 
 generateCertificates(
@@ -35,11 +39,11 @@ generateCertificates(
   names,
   outputDir,
   customColor,
-  100,
-  -50
+  0,
+  55
 )
   .then(() => console.log("All PDFs generated successfully"))
-  .catch((error) => console.error("Error generating PDFs:", error));
+  .catch((error: any) => console.error("Error generating PDFs:", error));
 ```
 
 ## Configuration

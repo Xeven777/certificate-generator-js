@@ -1,1 +1,1 @@
-export { generateCertificates } from './src/certificateGenerator.js';
+export { generateCertificates } from './src/pdfGenerator.js';
