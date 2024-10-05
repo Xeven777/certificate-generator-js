@@ -1,6 +1,7 @@
 import { PDFDocument, rgb } from "pdf-lib";
 import fontkit from "@pdf-lib/fontkit";
 import fs from "fs";
+import crypto from "crypto";
 import path from "path";
 
 const capitalize = (str, lower = false) =>
@@ -47,9 +48,8 @@ const generatePDF = async (
     });
 
     const pdfBytes = await pdfDoc.save();
-    const fileName = `${name}-Certificate-${(Math.random() * 1000000).toPrecision(
-        6
-    )}.pdf`;
+    const randomString = crypto.randomBytes(3).toString('hex');
+    const fileName = `${name}-Certificate-${randomString}.pdf`;
     const outputPath = path.join(outputDir, fileName);
     fs.writeFileSync(outputPath, pdfBytes);
 };
